@@ -3,17 +3,20 @@
  *  @brief auth API functionality
  */
 
-// POST
-signUp: (req, res) => {
+module.exports = {
+    // POST
+    signUp: (req, res) => {
 
+    },
+
+    // DELETE
+    signOut: (req, res) => {
+
+    },
+
+    // GET
+    signIn: (req, res) => {
+
+    }
 }
 
-// DELETE
-signOut: (req, res) => {
-
-}
-
-// GET
-signIn: (req, res) => {
-
-}

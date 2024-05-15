@@ -3,17 +3,21 @@
  *  @brief therapist API functionality
  */
 
-// PUT/PATCH
-modifyPatientCBTCard: (req, res) => {
 
+module.exports = {
+    // PUT/PATCH
+    modifyPatientCBTCard: (req, res) => {
+
+    },
+
+    // GET
+    searchPatientCBTCards: (req, res) => {
+
+    },
+
+    // POST
+    addNewPatient: (req, res) => {
+
+    },
 }
 
-// GET
-searchPatientCBTCards: (req, res) => {
-
-}
-
-// POST
-addNewPatient: (req, res) => {
-
-}

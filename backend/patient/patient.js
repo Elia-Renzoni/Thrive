@@ -4,24 +4,28 @@
  * 
 */
 
-// POST
-createNewCBTCard: (req, res) => {
+module.exports = {
+    // POST
+    createNewCBTCard: (req, res) => {
 
+    },
+
+    // PUT/PATCH
+    modifyCBTCard: (req, res) => {
+
+    },
+
+    // DELETE
+    deleteCBTCard: (req, res) => {
+
+    },
+
+    // GET
+    getAllCBTCards: (req, res) => {
+        res.send("OOS!!")
+    }
 }
 
-// PUT/PATCH
-modifyCBTCard: (req, res) => {
 
-}
-
-// DELETE
-deleteCBTCard: (req, res) => {
-
-}
-
-// GET
-getAllCBTCards: (req, res) => {
-
-}
 
 

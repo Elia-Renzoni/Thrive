@@ -4,6 +4,7 @@
  */
 
 const router = require('express').Router()
+const patient = require('./patient')
 
 // definitions
 router.post("/", patient.createNewCBTCard)
