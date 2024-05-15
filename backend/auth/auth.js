@@ -3,20 +3,24 @@
  *  @brief auth API functionality
  */
 
-module.exports = {
-    // POST
-    signUp: (req, res) => {
+const express = require('express')
+const route = express.Router()
 
-    },
+route.get("/", (req, res) => {
+    
+})
 
-    // DELETE
-    signOut: (req, res) => {
+route.post("/", (req, res) => {
 
-    },
+})
 
-    // GET
-    signIn: (req, res) => {
+route.delete("/", (req, res) => {
 
-    }
-}
+})
+
+route.get("/", (req, res) => {
+    
+})
+
+module.exports = route
 

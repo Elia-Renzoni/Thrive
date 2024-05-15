@@ -7,16 +7,18 @@
 const express = require('express')
 const app = express()
 
-const PatientRoutes = require("./patient/routePatients")
-const TherapistRoutes = require("./therapist/routeTherapist")
-const AuthRoutes = require("./auth/routeAuth")
+const PatientRoutes = require("./patient/patient")
+const TherapistRoutes = require("./therapist/therapist")
+const AuthRoutes = require("./auth/auth")
 
 const LISTEN_PORT = process.env.PORT || 4040
 
 // json payloads
 app.use(express.json())
 
-app.use("/first", PatientRoutes)
+app.use("/patient", PatientRoutes)
+app.use("/therapist", TherapistRoutes)
+app.use("/auth", AuthRoutes)
 
 
 const server = app.listen(LISTEN_PORT, function() {

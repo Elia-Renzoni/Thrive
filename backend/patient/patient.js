@@ -4,28 +4,23 @@
  * 
 */
 
-module.exports = {
-    // POST
-    createNewCBTCard: (req, res) => {
+const express = require('express')
+const route = express.Router()
 
-    },
+route.get("/", (req, res) => {
+    res.send("OK")
+})
 
-    // PUT/PATCH
-    modifyCBTCard: (req, res) => {
+route.post("/", (req, res) => {
 
-    },
+})
 
-    // DELETE
-    deleteCBTCard: (req, res) => {
+route.delete("/", (req, res) => {
 
-    },
+})
 
-    // GET
-    getAllCBTCards: (req, res) => {
-        res.send("OOS!!")
-    }
-}
+route.get("/", (req, res) => {
 
+})
 
-
-
+module.exports = route

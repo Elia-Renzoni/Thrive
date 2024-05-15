@@ -4,20 +4,24 @@
  */
 
 
-module.exports = {
-    // PUT/PATCH
-    modifyPatientCBTCard: (req, res) => {
+const express = require('express')
+const route = express.Router()
 
-    },
+route.get("/", (req, res) => {
 
-    // GET
-    searchPatientCBTCards: (req, res) => {
+})
 
-    },
+route.post("/", (req, res) => {
 
-    // POST
-    addNewPatient: (req, res) => {
+})
 
-    },
-}
+route.delete("/", (req, res) => {
+
+})
+
+route.get("/", (req, res) => {
+    
+})
+
+module.exports = route
 
