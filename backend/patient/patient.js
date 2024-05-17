@@ -11,23 +11,39 @@ const fs = require('fs')
 const process = require('process')
 const route = express.Router() 
 
-route.get("/", (req, res) => { res.send("OK") })
+route.get("/:user", (req, res) => {
+    let userToSearch = req.params.user
+    var response = {
+        card: []
+    }
+
+    changeWorkDirectory(path.join("E:", "progetto_piattaforme", "Thrive", "storage"))
+    let completePath = path.join("E:", "progetto_piattaforme", "Thrive", "storage", userToSearch + '.json')
+
+    if (readFromDatabase(completePath, response)) {
+        res.status(200)
+        res.send(response.card.pop)
+    } else {
+        res.status(400)
+    }
+})
 
 route.post("/newcard", (req, res) => {
     let username = req.body.username
-    let context = req.body.context
-    let inside = req.body.inside
-    let consequences = req.body.consequences
-    let debate = req.body.debate
-    let learned = req.body.learned
+    var requestSet = {
+        card: []
+    } 
+    requestSet.card.push({
+        context: req.body.context,
+        inside: req.body.inside,
+        consequences: req.body.consequences,
+        debate: req.body.debate,
+        learned: req.body.learned
+    })
 
     let completePath = path.join("E:", "progetto_piattaforme", "Thrive","storage", username + '.json')
 
-    let jsonEcondedInfo = jsonConverter({
-        context: context, inside: inside,
-        consequences: consequences, debate: debate,
-        learned: learned
-    })
+    let jsonEcondedInfo = jsonConverter(requestSet)
 
     changeWorkDirectory(path.join("E:", "progetto_piattaforme","Thrive", "storage"))
     writeInDatabase(completePath, jsonEcondedInfo, res)
@@ -38,10 +54,9 @@ route.delete("/", (req, res) => {
 
 })
 
-route.get("/", (req, res) => {
+route.patch("/", (req, res) => {
 
-})
-
+}) 
 
 function jsonConverter(toConvert) {
     return JSON.stringify(toConvert)
@@ -73,8 +88,14 @@ function changeWorkDirectory(path) {
     process.chdir(path)
 }
 
-function readFromDatabase(username) {
-
+function readFromDatabase(path, response) {
+    files.readFile(path, (error, data) => {
+        if (error) {
+            return false
+        }
+        response.card.push(data)
+        return true
+    })
 }
 
 module.exports = route
