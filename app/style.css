@@ -1,0 +1,22 @@
+
+body {
+    background-color: aquamarine;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header h1 {
+    text-align: center;
+}
+
+#logger {
+    width: 400px;
+    height: 400px;
+    background-color: cadetblue;
+    position: absolute;
+    left: 30%;
+    right: 30%;
+}
+
+#logger form label {
+    color:aliceblue
+}
